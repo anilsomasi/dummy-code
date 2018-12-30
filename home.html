@@ -1,0 +1,135 @@
+
+<div ng-controller="JobStatusController">
+<br>
+<select ng-model="itemGroup" ng-change="itemSelect()">
+    <option  value="">Select Group</option>
+    <option  value="MBR">Members</option>
+    <option  value="CLM">Claims</option>
+    <option  value="BEN">Benefits</option>
+    <option  value="BLN">Billing</option>
+
+</select>
+
+<select ng-model="itemSelected" ng-change="showlist()">
+    <option  value="">Select Job Name</option>
+
+    <option ng-repeat="job in jobslist" value="{{job}}" >{{job}}</option>
+</select>
+
+<br>
+<br>
+
+	<div >
+  <table class="table table-striped table-bordered" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance"  width="100%" dt-column-defs="vm.dtColumnDefs">
+					<thead>
+						<tr>
+							<th>Time</th>
+							<th>JOB Name</th>
+														<th>a Time</th>
+							
+							<th>Start Time</th>
+							<th>End Time</th>
+							<th>Status</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="list in listData">
+							<td>{{list.time | date:'medium'}}</td>
+							<td>{{list.jobName}}</td>
+							<td>{{list.startTime}}</td>
+														<td>{{list.startTime}}</td>
+							
+							<td>{{list.endTime}}</td>
+							<td>{{list.status}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			</div> 
+			
+			
+<!-- 
+<div class="row">
+	<div class="row">
+		<div class="col-lg-6">
+
+		
+
+
+			<div class="panel panel-default"
+				style="margin-left: 100px; width: 80%" ng-init="start('Anil')"
+				ng-controller="JobStatusController">
+				<div class="panel-heading"
+					style="background: #ff8f00; color: #FFFFFF">{{name}} Panel</div>
+
+				<div class="panel-body" style="background: #ffecb3">
+					<div class="row">
+						<div class="column" google-chart chart="statusChart" style=""
+							agc-on-select="showTable(selectedItem)" on-ready="chartReady()"></div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="col-lg-6">
+			<div class="panel panel-default"
+				style="margin-left: 50px; width: 80%" ng-init="start('Mythili')"
+				ng-controller="JobStatusController">
+				<div class="panel-heading"
+					style="background: #43a047; color: #FFFFFF">{{name}} Panel</div>
+				<div class="panel-body" style="background: #c8e6c9">
+					<div class="row">
+						<div class="column" google-chart chart="statusChart" style=""
+							agc-on-select="showTable(selectedItem)" on-ready="chartReady()"></div>
+
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="panel panel-default"
+				style="margin-left: 100px; width: 80%" ng-init="start('Lavanya')"
+				ng-controller="JobStatusController">
+				<div class="panel-heading"
+					style="background: #0277bd; color: #FFFFFF">{{name}} Panel</div>
+				<div class="panel-body" style="background: #b3e5fc">
+					<div class="row">
+						<div class="column" google-chart chart="statusChart" style=""
+							agc-on-select="showTable(selectedItem)" on-ready="chartReady()"></div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div class="col-lg-6">
+
+			<div class="panel panel-default"
+				style="margin-left: 50px; width: 80%" ng-init="start('Swathi')"
+				ng-controller="JobStatusController">
+				<div class="panel-heading"
+					style="background: #d84315; color: #FFFFFF">{{name}} Panel</div>
+				<div class="panel-body" style="background: #ffccbc">
+					<div class="row">
+						<div class="column" ng-model="test" google-chart
+							chart="statusChart" style=""
+							agc-on-select="showTable(selectedItem)" on-ready="chartReady()"></div>
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+
+	</div>
+</div> -->
